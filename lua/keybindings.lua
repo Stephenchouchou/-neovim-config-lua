@@ -25,6 +25,17 @@ map("n", "<C-l>", "<C-w>l", opt)
 map("i", "jk", "<ESC>", opt)
 map("v", "jk", "<ESC>", opt)
 
+-- bufferline
+-- 左右Tab切换
+map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
+-- 关闭
+--"moll/vim-bbye"
+map("n", "<A-w>", ":Bdelete!<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
 -- 插件快捷键
 local pluginKeys = {}
 
