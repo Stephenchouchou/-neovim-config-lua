@@ -24,7 +24,6 @@ map("n", "<C-l>", "<C-w>l", opt)
 -- Press jk fast to exit insert mode 
 map("i", "jk", "<ESC>", opt)
 map("v", "jk", "<ESC>", opt)
-
 -- bufferline
 -- 左右Tab切换
 map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
@@ -35,6 +34,12 @@ map("n", "<A-w>", ":Bdelete!<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
+-- Telescope
+-- 查找文件
+map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+-- 全局搜索
+map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 
 -- 插件快捷键
 local pluginKeys = {}
@@ -61,5 +66,24 @@ pluginKeys.nvimTreeList = {
   { key = "c", action = "copy" },
   { key = "p", action = "paste" },
   { key = "s", action = "system_open" },
+}
+
+-- Telescope 列表中 插入模式快捷键
+pluginKeys.telescopeList = {
+  i = {
+    -- 上下移动
+    ["<C-j>"] = "move_selection_next",
+    ["<C-k>"] = "move_selection_previous",
+    ["<Down>"] = "move_selection_next",
+    ["<Up>"] = "move_selection_previous",
+    -- 历史记录
+    ["<C-n>"] = "cycle_history_next",
+    ["<C-p>"] = "cycle_history_prev",
+    -- 关闭窗口
+    ["jk"] = "close",
+    -- 预览窗口上下滚动
+    ["<A-j>"] = "preview_scrolling_up",
+    ["<A-k>"] = "preview_scrolling_down",
+  },
 }
 return pluginKeys
