@@ -31,6 +31,8 @@ return require('packer').startup(function(use)
 	    "williamboman/mason-lspconfig.nvim",
 	    "neovim/nvim-lspconfig",
 	}
+	-- git
+	use({ "lewis6991/gitsigns.nvim"})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
