@@ -33,6 +33,20 @@ return require('packer').startup(function(use)
 	}
 	-- git
 	use({ "lewis6991/gitsigns.nvim"})
+	-- 代碼補全
+        -- 补全引擎
+        use("hrsh7th/nvim-cmp")
+        -- snippet 引擎
+        use("hrsh7th/vim-vsnip")
+        -- 补全源
+        use("hrsh7th/cmp-vsnip")
+        use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
+        use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
+        use("hrsh7th/cmp-path") -- { name = 'path' }
+        use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+
+        -- 常见编程语言代码段
+        use("rafamadriz/friendly-snippets")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
