@@ -47,6 +47,10 @@ return require('packer').startup(function(use)
 
         -- 常见编程语言代码段
         use("rafamadriz/friendly-snippets")
+	-- UI圖標顯示
+	require("lsp.ui")
+	-- line
+        use("lukas-reineke/indent-blankline.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
