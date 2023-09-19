@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- nvim-tree
-	use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", commit = '9c97e6449b0b0269bd44e1fd4857184dfa57bb4c'})
 	--Colorschemes
 	use 'EdenEast/nightfox.nvim'
 	-- bufferline
@@ -50,7 +50,9 @@ return require('packer').startup(function(use)
 	-- UI圖標顯示
 	require("lsp.ui")
 	-- line
-        use("lukas-reineke/indent-blankline.nvim")
+    use("lukas-reineke/indent-blankline.nvim")
+    -- Terminal	
+	use {"akinsho/toggleterm.nvim"}
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

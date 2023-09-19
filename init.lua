@@ -11,4 +11,4 @@ require ("lsp.setup")
 require ("plugin-config.gitsigns")
 require ("lsp.cmp")
 require ("plugin-config.indent-blankline")
-
+require ("plugin-config.toggleterm")
